@@ -50,7 +50,7 @@ if [ "$TARGET" != "" ]; then
 else
         echo ""
         echo "You need to define your device target!"
-        echo "example: build_kernel.sh G920P"
+        echo "example: build_kernel.sh N950F"
         exit 1
 fi
 
@@ -65,14 +65,9 @@ export KCONFIG_NOTIMESTAMP=true
 export ARCH=arm64;
 export SUB_ARCH=arm64;
 
-# G920T
-if [ "$TARGET" = "G920T" ] ; then
-	export KERNEL_CONFIG="custom_defconfig";
-fi;
-
-# G925T
-if [ "$TARGET" = "G925T" ] ; then
-	export KERNEL_CONFIG="custom-zeroltetmo";
+# N950F
+if [ "$TARGET" = "N950F" ] ; then
+	export KERNEL_CONFIG="exynos8895-greatlte_eur_open_defconfig";
 fi;
 
 # build script
